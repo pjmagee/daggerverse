@@ -11,7 +11,7 @@ from dagger import dag, function, object_type, Doc, client
 
 
 @object_type
-class DaggerBadge:
+class DaggerReadmeBadge:
     """Create a shield.io badge for your dagger project."""
 
     raw_url: Annotated[str, Doc("The URL to the JSON file containing the version information")]

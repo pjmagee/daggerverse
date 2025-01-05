@@ -1,4 +1,6 @@
-# Prompt
+# Create prompts
+
+Prompts the user for input when run locally, and can be passed values from CI in non-interactive mode without a tty
 
 ## Options
 

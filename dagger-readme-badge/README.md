@@ -15,5 +15,5 @@ This creates a shields.io badge for your dagger project.
 ## Usage example
 
 ```
-dagger call -m https://github.com/pjmagee/dagger-badge --raw-url=https://example.host/raw-path-to-your/dagger.json link
+dagger call -m https://github.com/pjmagee/daggerverse/dagger-readme-badge --raw-url=https://example.host/raw-path-to-your/dagger.json link
 ```

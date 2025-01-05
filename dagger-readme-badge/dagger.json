@@ -1,7 +1,10 @@
 {
   "name": "dagger-readme-badge",
+  "engineVersion": "v0.15.1",
   "sdk": "python",
-  "engineVersion": "v0.12.7",
-  "exclude": [".venv", ".idea"],
+  "exclude": [
+    ".venv",
+    ".idea"
+  ],
   "source": "."
 }
