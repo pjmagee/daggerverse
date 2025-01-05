@@ -1,0 +1,6 @@
+{
+  "name": "apache-avro-tools",
+  "engineVersion": "v0.15.1",
+  "sdk": "python",
+  "source": "."
+}

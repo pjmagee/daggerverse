@@ -1,0 +1,16 @@
+{
+  "name": "examples",
+  "sdk": "python",
+  "exclude": [
+    ".venv",
+    ".idea"
+  ],
+  "dependencies": [
+    {
+      "name": "prompt",
+      "source": "../../."
+    }
+  ],
+  "source": ".",
+  "engineVersion": "v0.12.7"
+}

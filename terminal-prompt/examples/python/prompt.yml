@@ -1,0 +1,1107 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: powershell.exe
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: C:\Users\patri\Documents\Projects\dagger-prompt\examples\python
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 273
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 19
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Terminalizer
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 357
+    content: "\e[?25l\e[2J\e[m\e[HWindows PowerShell\r\nCopyright (C) Microsoft Corporation. All rights reserved.\e[4;1HInstall the latest PowerShell for new features and improvements! https://aka.ms/PSWindows\e[6;1H\e]0;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\a\e[?25h"
+  - delay: 76
+    content: 'PS C:\Users\patri\Documents\Projects\dagger-prompt\examples\python> '
+  - delay: 2442
+    content: "\e[93md"
+  - delay: 15
+    content: "\e[m"
+  - delay: 151
+    content: "\e[93m\bda"
+  - delay: 16
+    content: "\e[m"
+  - delay: 182
+    content: "\e[?25l\e[93m\e[6;69Hdag\e[?25h"
+  - delay: 16
+    content: "\e[m"
+  - delay: 106
+    content: "\e[?25l\e[93m\e[6;69Hdagg\e[?25h"
+  - delay: 15
+    content: "\e[m"
+  - delay: 152
+    content: "\e[?25l\e[93m\e[6;69Hdagge\e[?25h"
+  - delay: 16
+    content: "\e[m"
+  - delay: 107
+    content: "\e[?25l\e[93m\e[6;69Hdagger\e[?25h"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[?25h"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mc\e[?25h"
+  - delay: 166
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mca\e[?25h"
+  - delay: 107
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcal\e[?25h"
+  - delay: 137
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall\e[?25h"
+  - delay: 77
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall \e[?25h"
+  - delay: 351
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall p\e[?25h"
+  - delay: 107
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall pr\e[?25h"
+  - delay: 45
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall pro\e[?25h"
+  - delay: 92
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall prom\e[?25h"
+  - delay: 90
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall promp\e[?25h"
+  - delay: 107
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall prompt\e[?25h"
+  - delay: 901
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall prompt-\e[?25h"
+  - delay: 351
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall prompt-c\e[?25h"
+  - delay: 107
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall prompt-ch\e[?25h"
+  - delay: 46
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall prompt-cho\e[?25h"
+  - delay: 168
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall prompt-choi\e[?25h"
+  - delay: 91
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall prompt-choic\e[?25h"
+  - delay: 182
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall prompt-choice\e[?25h"
+  - delay: 169
+    content: "\e[?25l\e[93m\e[6;69Hdagger \e[mcall prompt-choices\e[?25h"
+  - delay: 1267
+    content: "\r\n"
+  - delay: 30
+    content: "\e[?2004h\e[?1002h\e[?1006h\e[?1003;1006h"
+  - delay: 15
+    content: "\e[?25l"
+  - delay: 15
+    content: ' '
+  - delay: 31
+    content: "\r\e[K\e[90m\r\n─ \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m0.1s\e[K\e[90m\r\n┃ \e[m\e[2m22:04:03\e[22m \e[93mWRN \e[mfailed to get stable ID, defaulting to random value \e[2merror=\e[22m\"failed to rename stable ID temp file: rename C:\\\\Users\\\\patri\\\\AppData\\\\Local\\\\dagger\\\\stable_client_id3128913136 C:\\\\Users\\\\patri\\\\AppData\\\\Local\\\\dagger\\\\stable_client_id: The process cannot access\e[90m\r\n┃ \e[mhe file because it is being used by another process.\"\e[K\r\n  \e[33m● \e[mstarting engine \e[33m0.1s\e[m\r\n    \e[33m● \e[mcreate \e[33m0.1s\e[m\r\n      \e[33m\e[7m●\e[m resolve image \e[33m0.1s\e[90m\r\n─ \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+  - delay: 16
+    content: "\e[m"
+  - delay: 15
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m0.2s\e[K\e[m\e[10;1H  \e[33m● \e[mstarting engine \e[33m0.2s\e[K\e[m\r\n    \e[33m● \e[mcreate \e[33m0.2s\e[K\e[m\r\n      \e[33m\e[7m●\e[m resolve image \e[33m0.2s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 92
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m0.3s\e[K\e[m\e[10;1H  \e[33m● \e[mstarting engine \e[33m0.3s\e[K\e[m\r\n    \e[33m● \e[mcreate \e[33m0.3s\e[K\e[m\r\n      \e[33m\e[7m●\e[m resolve image \e[33m0.3s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m0.4s\e[K\e[m\e[10;1H  \e[33m● \e[mstarting engine \e[33m0.4s\e[K\e[m\r\n    \e[33m● \e[mcreate \e[33m0.4s\e[K\e[m\r\n      \e[33m\e[7m●\e[m resolve image \e[33m0.4s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m0.5s\e[K\e[m\e[10;1H  \e[33m● \e[mstarting engine \e[33m0.5s\e[K\e[m\r\n    \e[33m● \e[mcreate \e[33m0.5s\e[K\e[m\r\n      \e[33m\e[7m●\e[m resolve image \e[33m0.5s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m0.6s\e[K\e[m\e[10;1H  \e[33m● \e[mstarting engine \e[33m0.6s\e[K\e[m\r\n    \e[33m● \e[mcreate \e[33m0.6s\e[K\e[m\r\n      \e[33m\e[7m●\e[m resolve image \e[33m0.6s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 90
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m0.7s\e[K\e[m\e[10;1H  \e[33m● \e[mstarting engine \e[33m0.7s\e[K\e[m\r\n    \e[33m● \e[mcreate \e[33m0.7s\e[K\e[m\r\n      \e[33m\e[7m●\e[m resolve image \e[33m0.7s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m0.8s\e[K\e[m\e[10;1H  \e[33m● \e[mstarting engine \e[33m0.8s\e[K\e[m\r\n    \e[33m● \e[mcreate \e[33m0.8s\e[K\e[m\r\n      \e[33m\e[7m●\e[m resolve image \e[33m0.8s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m0.9s\e[K\e[m\e[10;1H  \e[33m● \e[mstarting engine \e[33m0.9s\e[K\e[m\r\n    \e[33m● \e[mcreate \e[33m0.9s\e[K\e[m\r\n      \e[33m\e[7m●\e[m resolve image \e[33m0.9s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 16
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m0.9s\e[K\e[90m\r\n┃ \e[m\e[2m22:04:03\e[22m \e[93mWRN \e[mfailed to get stable ID, defaulting to random value \e[2merror=\e[22m\"failed to rename stable ID temp file: rename C:\\\\Users\\\\patri\\\\AppData\\\\Local\\\\dagger\\\\stable_client_id3128913136 C:\\\\Users\\\\patri\\\\AppData\\\\Local\\\\dagger\\\\stable_client_id: The process cannot access\e[90m\r\n┃ \e[mhe file because it is being used by another process.\"\e[K\r\n  \e[33m● \e[mstarting engine \e[33m0.9s\e[K\e[m\r\n    \e[33m● \e[mcreate \e[33m0.9s\e[K\e[m\r\n      \e[32m✔ \e[mresolve image \e[2m0.8s\e[22m\e[K\r\n      \e[33m\e[7m●\e[m exec docker start dagger-engine-1f73f772dd1ba563 \e[33m0.0s\e[K\e[90m\r\n─ \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m0.9s\e[K\e[m\e[13;1H      \e[33m\e[7m●\e[m exec docker start dagger-engine-1f73f772dd1ba563 \e[33m0.1s\e[K\e[212C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 30
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m1.0s\e[K\e[m\e[10;1H  \e[33m● \e[mstarting engine \e[33m1.0s\e[K\e[m\r\n    \e[33m● \e[mcreate \e[33m1.0s\e[K\e[256C"
+  - delay: 16
+    content: "\e[m\e[33m\e[7;1H● \e[mconnect \e[33m1.0s\e[K\e[m\e[10;1H  \e[32m✔ \e[mstarting engine \e[2m0.9s\e[22m\e[K\r\n  \e[33m\e[7m●\e[m starting session \e[33m0.0s\e[K\e[90m\r\n─ \e[1mw\e[22m: \e]8;id=14468-1;https://dagger.cloud/traces/setup\e\\web\e]8;;\e\\  \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\e[m\r\n\e[K\r\n\e[K\e[273C"
+  - delay: 46
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m1.0s\e[K\e[m\e[11;1H  \e[33m\e[7m●\e[m starting session \e[33m0.1s\e[K\e[248C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[33m\e[7;1H● \e[mconnect \e[33m1.1s\e[K\e[259C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 16
+    content: "\e[32m\r✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m0.0s\e[K\e[m\r\n  \e[33m\e[7m●\e[m resolving module ref \e[33m0.0s\e[K\e[90m\r\n─ \e[1mw\e[22m: \e]8;id=14468-2;https://dagger.cloud/traces/setup\e\\web\e]8;;\e\\  \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\e[m\r\n\e[K\r\n\e[K\e[273C"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m0.1s\e[K\e[m\r\n  \e[33m\e[7m●\e[m resolving module ref \e[33m0.1s\e[K\e[244C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 75
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m0.2s\e[K\e[m\r\n  \e[33m\e[7m●\e[m resolving module ref \e[33m0.2s\e[K\e[244C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 16
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m0.2s\e[K\e[m\r\n  \e[32m✔ \e[mresolving module ref \e[2m0.1s\e[22m\e[K\r\n  \e[33m\e[7m●\e[m installing module \e[33m0.1s\e[K\e[90m\r\n─ \e[1mw\e[22m: \e]8;id=14468-3;https://dagger.cloud/traces/setup\e\\web\e]8;;\e\\  \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m0.3s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m0.2s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m0.4s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m0.3s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 90
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m0.5s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m0.4s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m0.6s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m0.5s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m0.7s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m0.6s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m0.8s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 31
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m0.7s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m0.9s\e[K\e[256C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 14
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m0.8s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m1.0s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 31
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m0.9s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m1.1s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 16
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m1.0s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m1.2s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m1.1s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 60
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m1.3s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 30
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m1.2s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m1.4s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m1.3s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 60
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m1.5s\e[K\e[256C"
+  - delay: 16
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m1.4s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m1.6s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m1.5s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m1.7s\e[K\e[256C"
+  - delay: 16
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m1.6s\e[K\e[247C"
+  - delay: 14
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m1.8s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m1.7s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m1.9s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m1.8s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m2.0s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 30
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m1.9s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m2.1s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m2.0s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 60
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m2.2s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m2.1s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m2.3s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m2.2s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m2.4s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m2.3s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m2.5s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m2.4s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m2.6s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m2.5s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m2.7s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m2.6s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m2.8s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m2.7s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m2.9s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m2.8s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 75
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m3.0s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m2.9s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 106
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m3.1s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m3.0s\e[K\e[247C"
+  - delay: 14
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m3.2s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m3.1s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m3.3s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m3.2s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m3.4s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m3.3s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m3.5s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m3.4s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m3.6s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m3.5s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m3.7s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m3.6s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m3.8s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m3.7s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m3.9s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m3.8s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m4.0s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m3.9s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m4.1s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m4.0s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m4.2s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m4.1s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m4.3s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m4.2s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m4.4s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m4.3s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 90
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m4.5s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m4.4s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 75
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m4.6s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m4.5s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m4.7s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m4.6s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m4.8s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m4.7s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m4.9s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m4.8s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m5.0s\e[K\e[256C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 30
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m4.9s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m5.1s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 16
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m5.0s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m5.2s\e[K\e[256C"
+  - delay: 16
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m5.1s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m5.3s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m5.2s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 60
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m5.4s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m5.3s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m5.5s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 31
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m5.4s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m5.6s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m5.5s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 62
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m5.7s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m5.6s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 60
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m5.8s\e[K\e[256C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m5.7s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 60
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m5.9s\e[K\e[256C"
+  - delay: 16
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m5.8s\e[K\e[247C"
+  - delay: 14
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m6.0s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m5.9s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m6.1s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 16
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m6.0s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m6.2s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m6.1s\e[K\e[247C"
+  - delay: 105
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m6.3s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m6.2s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m6.4s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m6.3s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m6.5s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m6.4s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m6.6s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m6.5s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m6.7s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m6.6s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 90
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m6.8s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m6.7s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m6.9s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m6.8s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m7.0s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m6.9s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m7.1s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m7.0s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 108
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m7.2s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m7.1s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m7.3s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m7.2s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m7.4s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m7.3s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m7.5s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m7.4s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m7.6s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m7.5s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m7.7s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m7.6s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m7.8s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m7.7s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m7.9s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m7.8s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m8.0s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m7.9s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m8.1s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m8.0s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m8.2s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m8.1s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m8.3s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m8.2s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m8.4s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m8.3s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m8.5s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m8.4s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 93
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m8.6s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m8.5s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m8.7s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m8.6s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 60
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m8.8s\e[K\e[256C"
+  - delay: 16
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m8.7s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m8.9s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 16
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m8.8s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m9.0s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m8.9s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m9.1s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 30
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m9.0s\e[K\e[247C"
+  - delay: 61
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m9.2s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m9.1s\e[K\e[247C"
+  - delay: 75
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m9.3s\e[K\e[256C"
+  - delay: 16
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m9.2s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 60
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m9.4s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m9.3s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m9.5s\e[K\e[256C"
+  - delay: 16
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m9.4s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m9.6s\e[K\e[256C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 14
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m9.5s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m9.7s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m9.6s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m9.8s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 30
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m9.7s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m9.9s\e[K\e[256C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m9.8s\e[K\e[247C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m10.0s\e[K\e[255C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 30
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m9.9s\e[K\e[247C"
+  - delay: 62
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m10.1s\e[K\e[255C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m10.0s\e[K\e[246C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m10.2s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m10.1s\e[K\e[246C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m10.3s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m10.2s\e[K\e[246C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m10.4s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m10.3s\e[K\e[246C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m10.5s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m10.4s\e[K\e[246C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m10.6s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m10.5s\e[K\e[246C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m10.7s\e[K\e[m\e[10;1H  \e[33m\e[7m●\e[m installing module \e[33m10.6s\e[K\e[246C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m10.8s\e[K\e[m\r\n  \e[32m✔ \e[mresolving module ref \e[2m0.1s\e[22m\e[K\r\n  \e[32m✔ \e[minstalling module \e[2m10.6s\e[22m\e[K\r\n  \e[33m\e[7m●\e[m analyzing module \e[33m0.1s\e[K\e[90m\r\n─ \e[1mw\e[22m: \e]8;id=14468-4;https://dagger.cloud/traces/setup\e\\web\e]8;;\e\\  \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m10.9s\e[K\e[m\e[11;1H  \e[33m\e[7m●\e[m analyzing module \e[33m0.2s\e[K\e[248C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m11.0s\e[K\e[m\e[11;1H  \e[33m\e[7m●\e[m analyzing module \e[33m0.3s\e[K\e[248C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 106
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m11.1s\e[K\e[m\e[11;1H  \e[33m\e[7m●\e[m analyzing module \e[33m0.4s\e[K\e[248C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m11.2s\e[K\e[m\e[11;1H  \e[33m\e[7m●\e[m analyzing module \e[33m0.5s\e[K\e[248C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m11.3s\e[K\e[m\e[11;1H  \e[33m\e[7m●\e[m analyzing module \e[33m0.6s\e[K\e[248C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m11.4s\e[K\e[m\e[11;1H  \e[33m\e[7m●\e[m analyzing module \e[33m0.7s\e[K\e[248C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m11.5s\e[K\e[m\e[11;1H  \e[33m\e[7m●\e[m analyzing module \e[33m0.8s\e[K\e[248C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 90
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m11.6s\e[K\e[m\e[11;1H  \e[33m\e[7m●\e[m analyzing module \e[33m0.9s\e[K\e[248C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 75
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m11.7s\e[K\e[m\e[11;1H  \e[33m\e[7m●\e[m analyzing module \e[33m1.0s\e[K\e[248C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m11.8s\e[K\e[m\e[11;1H  \e[33m\e[7m●\e[m analyzing module \e[33m1.1s\e[K\e[248C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\r\n● \e[minitialize \e[33m11.9s\e[K\e[m\e[11;1H  \e[33m\e[7m●\e[m analyzing module \e[33m1.2s\e[K\e[248C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[32m\r\n✔ \e[minitialize \e[2m11.9s\e[22m\e[K\e[32m\r\n✔ \e[mprepare \e[2m0.0s\e[22m\e[K\e[33m\e[7m\r\n●\e[m \e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[33m0.1s\e[K\e[90m\r\n─ \e[1mw\e[22m: \e]8;id=14468-5;https://dagger.cloud/traces/setup\e\\web\e]8;;\e\\  \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\e[m\r\n\e[K\e[273C"
+  - delay: 93
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[10;1H●\e[m \e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[33m0.2s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[10;1H●\e[m \e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[33m0.3s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[10;1H●\e[m \e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[33m0.4s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[10;1H●\e[m \e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[33m0.5s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[10;1H●\e[m \e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[33m0.6s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[10;1H●\e[m \e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[33m0.7s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[10;1H●\e[m \e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[33m0.8s\e[K\e[247C"
+  - delay: 14
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[10;1H●\e[m \e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[33m0.9s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[10;1H●\e[m \e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[33m1.0s\e[K\e[247C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 30
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[32m\r\n✔ \e[minitialize \e[2m11.9s\e[22m\e[K\e[32m\r\n✔ \e[mprepare \e[2m0.0s\e[22m\e[K\e[32m\r\n✔ \e[m\e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[2m0.9s\e[22m\e[K\e[33m\e[7m\r\n●\e[m \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m0.1s\e[K\e[90m\r\n─ \e[1mw\e[22m: \e]8;id=14468-6;https://dagger.cloud/traces/setup\e\\web\e]8;;\e\\  \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[11;1H●\e[m \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m0.2s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[11;1H●\e[m \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m0.3s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[11;1H●\e[m \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m0.4s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[11;1H●\e[m \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m0.5s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[11;1H●\e[m \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m0.6s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[7m\e[11;1H●\e[m \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m0.7s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[32m\r\n✔ \e[minitialize \e[2m11.9s\e[22m\e[K\e[32m\r\n✔ \e[mprepare \e[2m0.0s\e[22m\e[K\e[32m\r\n✔ \e[m\e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[2m0.9s\e[22m\e[K\e[33m\r\n● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m0.8s\e[K\e[m\r\n  \e[33m\e[7m●\e[m \e[1mprompt\e[22m\e[2m: Prompt!\e[22m \e[33m0.1s\e[K\e[90m\r\n─ \e[1mw\e[22m: \e]8;id=14468-7;https://dagger.cloud/traces/setup\e\\web\e]8;;\e\\  \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+  - delay: 15
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[12;1H  \e[33m\e[7m●\e[m \e[1mprompt\e[22m\e[2m: Prompt!\e[22m \e[33m0.2s\e[K\e[249C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 60
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m0.9s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 31
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[12;1H  \e[33m\e[7m●\e[m \e[1mprompt\e[22m\e[2m: Prompt!\e[22m \e[33m0.3s\e[K\e[249C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m1.0s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 16
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[12;1H  \e[33m\e[7m●\e[m \e[1mprompt\e[22m\e[2m: Prompt!\e[22m \e[33m0.4s\e[K\e[249C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m1.1s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 31
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[12;1H  \e[33m\e[7m●\e[m \e[1mprompt\e[22m\e[2m: Prompt!\e[22m \e[33m0.5s\e[K\e[249C"
+  - delay: 61
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m1.2s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[12;1H  \e[33m\e[7m●\e[m \e[1mprompt\e[22m\e[2m: Prompt!\e[22m \e[33m0.6s\e[K\e[249C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m1.3s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[12;1H  \e[33m\e[7m●\e[m \e[1mprompt\e[22m\e[2m: Prompt!\e[22m \e[33m0.7s\e[K\e[249C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m1.4s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[12;1H  \e[33m\e[7m●\e[m \e[1mprompt\e[22m\e[2m: Prompt!\e[22m \e[33m0.8s\e[K\e[249C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 62
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[32m\r\n✔ \e[minitialize \e[2m11.9s\e[22m\e[K\e[32m\r\n✔ \e[mprepare \e[2m0.0s\e[22m\e[K\e[32m\r\n✔ \e[m\e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[2m0.9s\e[22m\e[K\e[33m\r\n● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m1.5s\e[K\e[m\r\n  \e[32m✔ \e[m\e[1mprompt\e[22m\e[2m: Prompt!\e[22m \e[2m0.7s\e[22m\e[K\r\n  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mwithChoices\e[22m(\e[36mchoices: \e[m[\e[33m\"y\"\e[m, \e[33m\"n\"\e[m])\e[2m: Prompt!\e[22m \e[33m0.1s\e[K\e[90m\r\n─ \e[1mw\e[22m: \e]8;id=14468-8;https://dagger.cloud/traces/setup\e\\web\e]8;;\e\\  \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+  - delay: 14
+    content: "\e[m"
+  - delay: 76
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m1.6s\e[K\e[m\e[13;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mwithChoices\e[22m(\e[36mchoices: \e[m[\e[33m\"y\"\e[m, \e[33m\"n\"\e[m])\e[2m: Prompt!\e[22m \e[33m0.2s\e[K\e[216C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 91
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m1.7s\e[K\e[m\e[13;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mwithChoices\e[22m(\e[36mchoices: \e[m[\e[33m\"y\"\e[m, \e[33m\"n\"\e[m])\e[2m: Prompt!\e[22m \e[33m0.3s\e[K\e[216C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m1.8s\e[K\e[m\e[13;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mwithChoices\e[22m(\e[36mchoices: \e[m[\e[33m\"y\"\e[m, \e[33m\"n\"\e[m])\e[2m: Prompt!\e[22m \e[33m0.4s\e[K\e[216C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m1.9s\e[K\e[m\e[13;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mwithChoices\e[22m(\e[36mchoices: \e[m[\e[33m\"y\"\e[m, \e[33m\"n\"\e[m])\e[2m: Prompt!\e[22m \e[33m0.5s\e[K\e[216C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m2.0s\e[K\e[m\e[13;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mwithChoices\e[22m(\e[36mchoices: \e[m[\e[33m\"y\"\e[m, \e[33m\"n\"\e[m])\e[2m: Prompt!\e[22m \e[33m0.6s\e[K\e[216C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 92
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m2.1s\e[K\e[m\e[13;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mwithChoices\e[22m(\e[36mchoices: \e[m[\e[33m\"y\"\e[m, \e[33m\"n\"\e[m])\e[2m: Prompt!\e[22m \e[33m0.7s\e[K\e[216C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[13;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mwithChoices\e[22m(\e[36mchoices: \e[m[\e[33m\"y\"\e[m, \e[33m\"n\"\e[m])\e[2m: Prompt!\e[22m \e[33m0.8s\e[K\e[216C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 30
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m2.2s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 47
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[13;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mwithChoices\e[22m(\e[36mchoices: \e[m[\e[33m\"y\"\e[m, \e[33m\"n\"\e[m])\e[2m: Prompt!\e[22m \e[33m0.9s\e[K\e[216C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 16
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[32m\r\n✔ \e[minitialize \e[2m11.9s\e[22m\e[K\e[32m\r\n✔ \e[mprepare \e[2m0.0s\e[22m\e[K\e[32m\r\n✔ \e[m\e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[2m0.9s\e[22m\e[K\e[33m\r\n● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m2.3s\e[K\e[m\r\n  \e[32m✔ \e[m\e[1mprompt\e[22m\e[2m: Prompt!\e[22m \e[2m0.7s\e[22m\e[K\r\n  \e[32m✔ \e[35mPrompt\e[m.\e[1mwithChoices\e[22m(\e[36mchoices: \e[m[\e[33m\"y\"\e[m, \e[33m\"n\"\e[m])\e[2m: Prompt!\e[22m \e[2m0.7s\e[22m\e[K\r\n  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mexecute\e[22m\e[2m: PromptResult!\e[22m \e[33m0.1s\e[K\e[90m\r\n─ \e[1mw\e[22m: \e]8;id=14468-9;https://dagger.cloud/traces/setup\e\\web\e]8;;\e\\  \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+  - delay: 15
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[14;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mexecute\e[22m\e[2m: PromptResult!\e[22m \e[33m0.2s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 60
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m2.4s\e[K\e[235C"
+  - delay: 16
+    content: "\e[m\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[14;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mexecute\e[22m\e[2m: PromptResult!\e[22m \e[33m0.3s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 77
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m2.5s\e[K\e[235C"
+  - delay: 14
+    content: "\e[m"
+  - delay: 16
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[14;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mexecute\e[22m\e[2m: PromptResult!\e[22m \e[33m0.4s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 61
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m2.6s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 16
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[14;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mexecute\e[22m\e[2m: PromptResult!\e[22m \e[33m0.5s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m2.7s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 31
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[14;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mexecute\e[22m\e[2m: PromptResult!\e[22m \e[33m0.6s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m2.8s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 16
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[14;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mexecute\e[22m\e[2m: PromptResult!\e[22m \e[33m0.7s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 45
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m2.9s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 31
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[14;1H  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mexecute\e[22m\e[2m: PromptResult!\e[22m \e[33m0.8s\e[K\e[235C"
+  - delay: 15
+    content: "\e[m"
+  - delay: 46
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[33m\e[11;1H● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m3.0s\e[K\e[235C"
+  - delay: 16
+    content: "\e[m"
+  - delay: 15
+    content: "\e[32m\e[7;1H✔ \e[mconnect \e[2m1.1s\e[22m\e[K\e[32m\r\n✔ \e[minitialize \e[2m11.9s\e[22m\e[K\e[32m\r\n✔ \e[mprepare \e[2m0.0s\e[22m\e[K\e[32m\r\n✔ \e[m\e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[2m0.9s\e[22m\e[K\e[33m\r\n● \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[33m3.0s\e[K\e[m\r\n  \e[32m✔ \e[m\e[1mprompt\e[22m\e[2m: Prompt!\e[22m \e[2m0.7s\e[22m\e[K\r\n  \e[32m✔ \e[35mPrompt\e[m.\e[1mwithChoices\e[22m(\e[36mchoices: \e[m[\e[33m\"y\"\e[m, \e[33m\"n\"\e[m])\e[2m: Prompt!\e[22m \e[2m0.7s\e[22m\e[K\r\n  \e[33m\e[7m●\e[m \e[35mPrompt\e[m.\e[1mexecute\e[22m\e[2m: PromptResult!\e[22m \e[33m0.9s\e[K\e[90m\r\n─ \e[1mw\e[22m: \e]8;id=14468-10;https://dagger.cloud/traces/setup\e\\web\e]8;;\e\\  \e[1m←↑↓→\e[22m: move  \e[1mhome\e[22m: first  \e[1mend\e[22m: last  \e[1menter\e[22m: zoom  \e[1m+/-\e[22m: verbosity=1  \e[1mq\e[22m: quit ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\e[m\r\nOutcome: True, Input: n                                                                                                                                                                                                                                                          \e[K\e[16;524H"
+  - delay: 46
+    content: "\e[7;1H\e[K\r\n\e[K\r\n\e[K\r\n\e[K\r\n\e[K\r\n\e[K\r\n\e[K\r\n\e[K\r\n\e[K\r\n\e[K\e[273C"
+  - delay: 480
+    content: "\e[?1003;1006l\e[?2004l\e[?1002l\e[?1003l\e[?1006l"
+  - delay: 22
+    content: "\e[7;1HSetup tracing at https://dagger.cloud/traces/setup. To hide: export NOTHANKS=1\e[K\e[32m\e[9;1H✔ \e[mconnect \e[2m1.1s\e[32m\e[22m\r\n✔ \e[minitialize \e[2m11.9s\e[32m\e[22m\r\n✔ \e[mprepare \e[2m0.0s\e[32m\e[22m\r\n✔ \e[m\e[1mexamples\e[22m\e[2m: Examples!\e[22m \e[2m0.9s\e[32m\e[22m\r\n✔ \e[35mExamples\e[m.\e[1mpromptChoices\e[22m\e[2m: String!\e[22m \e[2m3.0s\e[22m\e[15;1HOutcome: True, Input: n\r\nPS C:\\Users\\patri\\Documents\\Projects\\dagger-prompt\\examples\\python> \e[?25h"
+  - delay: 4511
+    content: "\e[93me"
+  - delay: 15
+    content: "\e[m"
+  - delay: 152
+    content: "\e[93m\bex"
+  - delay: 16
+    content: "\e[m"
+  - delay: 61
+    content: "\e[?25l\e[93m\e[16;69Hexi\e[?25h"
+  - delay: 15
+    content: "\e[m"
+  - delay: 107
+    content: "\e[?25l\e[92m\e[16;69Hexit\e[?25h"
+  - delay: 16
+    content: "\e[m"
+  - delay: 76
+    content: "\r\n"
