@@ -19,17 +19,16 @@ type Kiota struct {
 
 // New Kiota module
 func New(
-// +optional
+	// +optional
 	ConsoleColorsEnabled *bool,
-// +optional
+	// +optional
 	ConsoleColorsSwap *bool,
-// +optional
+	// +optional
 	TutorialEnabled *bool,
-// +optional
+	// +optional
 	OfflineEnabled *bool,
-
-// +optional
-// +default="information"
+	// +optional
+	// +default="information"
 	LogLevel *LogLevel,
 ) *Kiota {
 
@@ -101,24 +100,25 @@ var (
 )
 
 func (m *Kiota) WithParameters(
-// +optional
+	// +optional
 	clearCache *bool,
+	// +optional
 	excludePath *string,
-// +optional
+	// +optional
 	includePath *string,
-// +optional
+	// +optional
 	version *string,
-// +optional
+	// +optional
 	searchKey *string,
-// +optional
+	// +optional
 	disableSSLValidation *bool,
-// +optional
+	// +optional
 	openApi *string,
-// +optional
-	output *string,
-// +optional
+	// +optional
+	outputPath *string,
+	// +optional
 	cleanOutput *bool,
-// +optional
+	// +optional
 	language *Language,
 
 ) *Kiota {
@@ -146,9 +146,9 @@ func (m *Kiota) WithParameters(
 		m.Parameters = append(m.Parameters, *version)
 	}
 
-	if output != nil {
+	if outputPath != nil {
 		m.Parameters = append(m.Parameters, "--output")
-		m.Parameters = append(m.Parameters, *output)
+		m.Parameters = append(m.Parameters, *outputPath)
 	}
 
 	if disableSSLValidation != nil && *disableSSLValidation {
@@ -235,27 +235,27 @@ func (m *Kiota) Show(
 
 // Client generation
 func (m *Kiota) Generate(
-// +optional
+	// +optional
 	openApi *string,
-// +optional
+	// +optional
 	language *Language,
-// +optional
+	// +optional
 	additionalData *bool,
-// +optional
-	output *string,
-// +optional
+	// +optional
+	outputPath *string,
+	// +optional
 	className *string,
-// +optional
+	// +optional
 	excludeBackwardCompatible *bool,
-// +optional
+	// +optional
 	deserializer *string,
-// +optional
+	// +optional
 	serializer *string,
-// +optional
+	// +optional
 	backingStore *bool,
-// +optional
+	// +optional
 	namespaceName *string,
-// +optional
+	// +optional
 	structuredMimeTypes []string,
 	typeAccessModifier *TypeAccessModifier,
 ) *Kiota {
@@ -318,9 +318,9 @@ func (m *Kiota) Generate(
 		parameters = append(parameters, string(*typeAccessModifier))
 	}
 
-	if output != nil {
+	if outputPath != nil {
 		parameters = append(parameters, "--output")
-		parameters = append(parameters, *output)
+		parameters = append(parameters, *outputPath)
 	}
 
 	m.Container = m.Container.WithExec(append([]string{"generate"}, append(m.Parameters, parameters...)...), dagger.ContainerWithExecOpts{UseEntrypoint: true})
