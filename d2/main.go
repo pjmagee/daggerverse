@@ -1,35 +1,68 @@
+/*
+D2 Diagramming Tool
+
+A dagger module to render D2 diagrams.
+You can render a single D2 file or an entire directory of D2 files, specify the output
+format (svg, png, pdf, pptx, gif), and pass extra arguments to the D2 command.
+
+Example Usages:
+
+	dagger call --file=your-file.d2 render export --path=./out
+	dagger call --format='pdf' --file='your-file.d2' render export --path=./out
+	dagger call --format='gif' --file='your-file.d2' with-arg --arg='--animate-interval=100' render export --path=./out
+
+For more details, refer to the README.md.
+*/
 package main
 
 import (
 	"dagger/d-2/internal/dagger"
+	"errors"
 	"fmt"
+	"strings"
 )
 
 type D2 struct {
-	File *dagger.File      // +private
-	Dir  *dagger.Directory // +private
+	File   *dagger.File      // +private
+	Dir    *dagger.Directory // +private
+	Format Format            // +private
+	Args   []string          // +private, extra arguments for d2 command
 }
 
-// Export https://d2lang.com/tour/exports
-type Export string
+// format https://d2lang.com/tour/formats
+type Format string
 
 const (
-	SVG  Export = "svg"
-	PNG  Export = "png"
-	PDF  Export = "pdf"
-	PPTX Export = "pptx"
-	GIF  Export = "gif"
+	SVG  Format = "svg"
+	PNG  Format = "png"
+	PDF  Format = "pdf"
+	PPTX Format = "pptx"
+	GIF  Format = "gif"
 )
 
-func (m *D2) WithFile(file *dagger.File) *D2 {
-	m.File = file
+func New(
+	// +optional
+	// +default="svg"
+	format Format,
+	// +optional
+	// +ignore=["*", "!**/*.d2"]
+	dir *dagger.Directory,
+	// +optional
+	file *dagger.File) *D2 {
+	return &D2{
+		Dir:    dir,
+		File:   file,
+		Format: format,
+	}
+}
+
+func (m *D2) WithArg(arg string) *D2 {
+	m.Args = append(m.Args, arg)
 	return m
 }
 
-func (m *D2) WithDirectory(
-	// +ignore=["*", "!**/*.d2"]
-	dir *dagger.Directory) *D2 {
-	m.Dir = dir
+func (m *D2) WithFrmat(format Format) *D2 {
+	m.Format = format
 	return m
 }
 
@@ -65,27 +98,23 @@ func (m *D2) Serve(
 		})
 }
 
-// renders the D2 file or directory to the given export format.
-func (m *D2) Render(
-	// +optional
-	// +default="svg"
-	export Export,
-) *dagger.Directory {
+// renders the D2 file or directory to the given format format.
+func (m *D2) Render() (*dagger.Directory, error) {
 
 	if m.File != nil {
-		return renderFile(m.File, export)
+		return renderFile(m.File, m.Format, m.Args), nil
 	}
 
 	if m.Dir != nil {
-		return renderDir(m.Dir, export)
+		return renderDir(m.Dir, m.Format, m.Args), nil
 	}
 
-	panic("No file or directory provided")
+	return nil, errors.New("no file or directory provided")
 }
 
-func container(export Export) *dagger.Container {
+func container(format Format) *dagger.Container {
 
-	if export == SVG {
+	if format == SVG {
 		return dag.Container().
 			From("alpine").
 			WithExec([]string{"apk", "add", "go"}).
@@ -98,24 +127,52 @@ func container(export Export) *dagger.Container {
 		WithExec([]string{"bash", "-c", "apt-get update && apt-get -y install build-essential && curl -fsSL https://d2lang.com/install.sh | sh -s --"})
 }
 
-func renderFile(file *dagger.File, export Export) *dagger.Directory {
+func renderFile(file *dagger.File, format Format, extraArgs []string) *dagger.Directory {
+	args := []string{"d2"}
+	// Append any extra args (normalized: check for gif-specific flag)
+	args = append(args, normalizeArgs(format, extraArgs)...)
+	// Append the input file and output path
+	args = append(args, "/d2/in/in.d2", fmt.Sprintf("/d2/out/out.%s", format))
 
-	return container(export).
+	return container(format).
 		WithWorkdir("/d2").
 		WithMountedFile("./in/in.d2", file).
 		WithWorkdir("./out").
-		WithExec([]string{"d2", "/d2/in/in.d2", fmt.Sprintf("/d2/out/out.%s", export)}).
+		WithExec(args).
 		Directory(".")
 }
 
-func renderDir(dir *dagger.Directory, export Export) *dagger.Directory {
-
-	return container(export).
+func renderDir(dir *dagger.Directory, format Format, extraArgs []string) *dagger.Directory {
+	normalized := normalizeArgs(format, extraArgs)
+	extraStr := ""
+	if len(normalized) > 0 {
+		extraStr = strings.Join(normalized, " ") + " "
+	}
+	// Build the shell command with extra arguments included (if any)
+	cmd := fmt.Sprintf("for f in /d2/in/*; do d2 %s $f $(basename $f).%s; done", extraStr, format)
+	return container(format).
 		WithWorkdir("/d2").
 		WithMountedDirectory("./in", dir).
 		WithWorkdir("./out").
-		WithExec([]string{
-			"sh", "-c", fmt.Sprintf("for f in /d2/in/*; do d2 $f $(basename $f).%s; done", export),
-		}).
+		WithExec([]string{"sh", "-c", cmd}).
 		Directory(".")
+}
+
+func normalizeArgs(format Format, extraArgs []string) []string {
+
+	normalized := extraArgs
+
+	if format == GIF {
+		found := false
+		for _, arg := range normalized {
+			if strings.HasPrefix(arg, "--animate-interval") {
+				found = true
+				break
+			}
+		}
+		if !found {
+			normalized = append([]string{"--animate-interval", "100"}, normalized...)
+		}
+	}
+	return normalized
 }
