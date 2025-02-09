@@ -1,7 +1,7 @@
 /*
 D2 Diagramming Tool
 
-A dagger module to render D2 diagrams.
+This tool uses Dagger to render D2 diagrams within containerized environments.
 You can render a single D2 file or an entire directory of D2 files, specify the output
 format (svg, png, pdf, pptx, gif), and pass extra arguments to the D2 command.
 
@@ -16,6 +16,7 @@ For more details, refer to the README.md.
 package main
 
 import (
+	"context"
 	"dagger/d-2/internal/dagger"
 	"errors"
 	"fmt"
@@ -128,15 +129,22 @@ func container(format Format) *dagger.Container {
 }
 
 func renderFile(file *dagger.File, format Format, extraArgs []string) *dagger.Directory {
+	// Assuming dagger.File provides a Name() method that returns the original file name, e.g. "HLD.d2".
+	originalName, _ := file.Name(context.Background())
+	// Create the input file path using the original file name.
+	inputPath := fmt.Sprintf("/d2/in/%s", originalName)
+	// Generate the output file name by appending the format extension: "HLD.d2.svg" for example.
+	outputName := fmt.Sprintf("%s.%s", originalName, format)
+
 	args := []string{"d2"}
-	// Append any extra args (normalized: check for gif-specific flag)
+	// Append any extra args after normalization (handles gif-specific flag defaults)
 	args = append(args, normalizeArgs(format, extraArgs)...)
-	// Append the input file and output path
-	args = append(args, "/d2/in/in.d2", fmt.Sprintf("/d2/out/out.%s", format))
+	// Append the input path and computed output path to the command arguments.
+	args = append(args, inputPath, fmt.Sprintf("/d2/out/%s", outputName))
 
 	return container(format).
 		WithWorkdir("/d2").
-		WithMountedFile("./in/in.d2", file).
+		WithMountedFile(inputPath, file).
 		WithWorkdir("./out").
 		WithExec(args).
 		Directory(".")

@@ -1,5 +1,6 @@
 {
   "name": "d2",
   "engineVersion": "v0.15.3",
-  "sdk": "go"
+  "sdk": "go",
+  "source": "."
 }
