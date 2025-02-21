@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"net/http"
 	"strings"
-	"winget-release/internal/dagger"
 )
 
 type WingetRelease struct {
@@ -16,19 +16,29 @@ type Release struct {
 	HtmlUrl string `json:"html_url"`
 }
 
-func (m *WingetRelease) GetLatestRelease() (string, error) {
+// New method to check if release is already published
+func (m *WingetRelease) IsReleasePublished(version string) (bool, error) {
+	url := fmt.Sprintf("https://github.com/microsoft/winget-pkgs/tree/master/manifests/d/Dagger/Cli/%s", version)
+	resp, err := http.Get(url)
+	if err != nil {
+		return false, fmt.Errorf("failed to check winget repository: %w", err)
+	}
+	defer resp.Body.Close()
 
+	// If status is 200, the release exists
+	return resp.StatusCode == http.StatusOK, nil
+}
+
+func (m *WingetRelease) GetLatestRelease() (string, error) {
 	resp := dag.HTTP("https://api.github.com/repos/dagger/dagger/releases/latest")
 
 	contents, err := resp.Contents(context.Background())
-
 	if err != nil {
 		return contents, err
 	}
 
 	release := Release{}
 	err = json.Unmarshal([]byte(contents), &release)
-
 	if err != nil {
 		return "", err
 	}
@@ -42,7 +52,7 @@ func (m *WingetRelease) CreateWingetCommand(
 	tag string,
 	// The token to use for the wingetcreate command
 	// +optional
-	token *dagger.Secret,
+	tokenPlaceholder bool,
 	// Whether to add the --submit
 	// +optional
 	// +default=false
@@ -59,20 +69,24 @@ func (m *WingetRelease) CreateWingetCommand(
 
 	version := strings.TrimPrefix(tag, "v")
 
-	pat := ""
+	// Check if release is already published
+	published, err := m.IsReleasePublished(version)
 
-	if token != nil {
-		pat, _ = token.Plaintext(context.Background())
+	if err != nil {
+		return "", fmt.Errorf("failed to check if release is published: %w", err)
+	}
+	if published {
+		return "", fmt.Errorf("release %s is already published to winget", version)
 	}
 
-	cmd := fmt.Sprintf("wingetcreate update")
+	cmd := fmt.Sprintf(`.\wingetcreate.exe update`)
+
+	if tokenPlaceholder {
+		cmd += " --token $env:WINGETCREATE_TOKEN "
+	}
 
 	if submit {
 		cmd += " --submit "
-	}
-
-	if pat != "" {
-		cmd += fmt.Sprintf(" --token \"%s\" ", strings.ReplaceAll(pat, "\n", ""))
 	}
 
 	cmd += fmt.Sprintf(" --urls "+
@@ -82,6 +96,7 @@ func (m *WingetRelease) CreateWingetCommand(
 		" --version %[1]s", version)
 
 	cmd += fmt.Sprintf(" Dagger.Cli")
+	cmd = strings.ReplaceAll(cmd, "  ", " ")
 
 	return cmd, nil
 }
