@@ -1,0 +1,7 @@
+{
+  "name": "git-filter-repo",
+  "engineVersion": "v0.18.5",
+  "sdk": {
+    "source": "python"
+  }
+}
