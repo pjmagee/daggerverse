@@ -68,12 +68,14 @@ func (m *ParadoxClausewitzSave) GetBinary() (*dagger.File, error) {
 }
 
 // processes a Paradox Clausewitz save file with the specified arguments
-func (m *ParadoxClausewitzSave) Process(
+func (m *ParadoxClausewitzSave) Query(
 	ctx context.Context,
+	// the query
+	q string,
+	// the game type
+	g string,
 	// +optional
-	saveFile *dagger.File,
-	// +optional
-	args []string) (string, error) {
+	saveFile *dagger.File) (string, error) {
 
 	binary, err := m.GetBinary()
 
@@ -102,33 +104,30 @@ func (m *ParadoxClausewitzSave) Process(
 		container = container.WithExec([]string{"tar", "-xzf", "/tmp/binary", "-C", "/app"})
 	}
 
+	// mount using the save files original extension and name
+	name, err := saveFile.Name(ctx)
+	if err != nil {
+		return "", fmt.Errorf("failed to get save file name: %w", err)
+	}
+
+	path := fmt.Sprintf("/tmp/%s", name)
+
 	container = container.
+		WithMountedFile(path, saveFile).
 		WithExec([]string{"ls", "-la", "/app"}).
 		WithExec([]string{"chmod", "+x", "/app/mageesoft-pdx-ce-sav"}).
 		WithWorkdir("/app").
-		WithExec([]string{"sh", "-c", "echo 'File type:' && file ./mageesoft-pdx-ce-sav"}).
 		WithExec([]string{"apt-get", "install", "-y", "libc6", "libstdc++6", "libicu-dev"}).
 		WithExec([]string{"apt-get", "install", "-y", "wget", "apt-transport-https"}).
 		WithEnvVariable("DOTNET_SYSTEM_GLOBALIZATION_INVARIANT", "1").
-		WithExec([]string{"chmod", "+x", "/app/mageesoft-pdx-ce-sav"})
+		WithExec([]string{"chmod", "+x", "/app/mageesoft-pdx-ce-sav"}).
+		WithExec([]string{
+			"./mageesoft-pdx-ce-sav",
+			"query",
+			"-q", q,
+			"-g", g,
+			"-s", path,
+		})
 
-	// Prepare command arguments
-	cmdArgs := []string{"./mageesoft-pdx-ce-sav"}
-
-	// Add save file if provided
-	if saveFile != nil {
-		container = container.WithMountedFile("/tmp/save", saveFile)
-		cmdArgs = append(cmdArgs, "-s", "/tmp/save")
-	}
-
-	// Add any additional arguments
-	if args != nil {
-		cmdArgs = append(cmdArgs, args...)
-	}
-
-	// Execute the binary
-	result := container.WithExec(cmdArgs)
-
-	// Return the output
-	return result.Stdout(ctx)
+	return container.Stdout(ctx)
 }
