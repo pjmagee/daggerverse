@@ -1,0 +1,11 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/.dagger/">
+    <Project Path=".dagger/AspnetHelloModule.csproj" />
+  </Folder>
+  <Project Path="AspNetHello/AspNetHello.csproj" />
+</Solution>
