@@ -2,15 +2,6 @@
 
 A Dagger module that dynamically generates ASP.NET Blazor applications using `dotnet new blazor` at runtime. **No source code is stored in the repository** - everything is scaffolded on-the-fly through Dagger functions.
 
-## Concept
-
-Unlike traditional approaches where template code is checked into the repository, this module:
-
-- **Generates templates dynamically** using `dotnet new blazor` in a container
-- **Keeps the repository minimal** with only Dagger module code
-- **Demonstrates template-driven development** with Dagger functions
-- **Eliminates source code maintenance** - always uses the latest .NET template
-
 ## How It Works
 
 The `Scaffold()` function uses the .NET SDK container to run `dotnet new blazor` and returns the generated directory. All other functions (`Build`, `Publish`, `PublishContainer`, `Serve`) first scaffold the template, then pass it to the `Dag.Dotnet()` module for compilation and deployment.
