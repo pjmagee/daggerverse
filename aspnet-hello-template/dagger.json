@@ -1,0 +1,14 @@
+{
+  "name": "aspnet-hello-template-module",
+  "engineVersion": "v0.19.7",
+  "sdk": {
+    "source": "github.com/pjmagee/dagger/sdk/csharp@csharp/experimental"
+  },
+  "dependencies": [
+    {
+      "name": "dotnet",
+      "source": "github.com/pjmagee/daggerverse/dotnet@main",
+      "pin": "b57c6e7ce43ca1cd4ce9c0eec16ef59a5923fe49"
+    }
+  ]
+}

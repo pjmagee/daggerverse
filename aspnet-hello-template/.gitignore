@@ -1,0 +1,33 @@
+# Dagger module artifacts
+/sdk
+/bin
+/obj
+/.env
+dagger.gen.go
+internal/
+
+# Generated application code (should not be committed)
+# Everything is scaffolded on-the-fly by Dagger functions
+AspNetHelloTemplate/
+**/bin/
+**/obj/
+*.csproj.user
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Only commit:
+# - dagger.json
+# - Main.cs
+# - README.md
+# - LICENSE
+# - .gitignore
