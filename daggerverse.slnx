@@ -16,4 +16,7 @@
   <Folder Name="/dotnet/">
     <Project Path="dotnet/Dotnet.csproj" />
   </Folder>
+  <Folder Name="/humanizer/">
+    <Project Path="humanizer/Humanizer.csproj" />
+  </Folder>
 </Solution>
