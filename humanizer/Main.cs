@@ -265,4 +265,36 @@ public class TextHumanizer
 
         return string.Join(Environment.NewLine, results);
     }
+
+    // ========== Number Localization ==========
+
+    /// <summary>
+    /// Converts a number to words in the specified culture (e.g., 123 → "one hundred twenty-three")
+    /// </summary>
+    [Function]
+    public string NumberToWords(int number, string? culture = null)
+    {
+        var cultureInfo = culture != null ? new CultureInfo(culture) : GetCulture();
+        return number.ToWords(cultureInfo);
+    }
+
+    /// <summary>
+    /// Converts a number to ordinal words (e.g., 1 → "first", 2 → "second")
+    /// </summary>
+    [Function]
+    public string NumberToOrdinalWords(int number, string? culture = null)
+    {
+        var cultureInfo = culture != null ? new CultureInfo(culture) : GetCulture();
+        return number.ToOrdinalWords(cultureInfo);
+    }
+
+    /// <summary>
+    /// Converts a number to its ordinal form (e.g., 1 → "1st", 2 → "2nd")
+    /// </summary>
+    [Function]
+    public string Ordinalize(int number, string? culture = null)
+    {
+        var cultureInfo = culture != null ? new CultureInfo(culture) : GetCulture();
+        return number.Ordinalize(cultureInfo);
+    }
 }
