@@ -10,8 +10,7 @@
   "dependencies": [
     {
       "name": "dotnet",
-      "source": "github.com/pjmagee/daggerverse/dotnet@main",
-      "pin": "d71b38c3dba63754cc4a10234798a78befe61b94"
+      "source": "github.com/pjmagee/daggerverse/dotnet@main"
     }
   ],
   "source": ".dagger"

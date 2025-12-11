@@ -53,6 +53,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Required by vendored SDK source code (sdk/**/*.cs) -->
+    <PackageReference Include="OpenTelemetry" Version="1.14.0" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.14.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <!-- Include Dagger SDK Analyzers and Code Fixes for IDE support -->
     <Analyzer Include="sdk/analyzers/dotnet/cs/Dagger.SDK.Analyzers.dll" />
     <Analyzer Include="sdk/analyzers/dotnet/cs/Dagger.SDK.CodeFixes.dll" />
