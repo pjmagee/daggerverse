@@ -10,22 +10,29 @@ public class AspnetHelloModule
     /// Build the ASP.NET Blazor application using the dotnet dependency module
     /// </summary>
     [Function]
-    public Container Build(Directory? source = null, string version = "10.0", string configuration = "Release")
+    public Container Build(
+        Directory? source = null,
+        string version = "10.0",
+        string configuration = "Release"
+    )
     {
         source ??= Dag.CurrentModule().Source().Directory_("..");
-        
-        return Dag.Dotnet()
-            .Build(source, configuration, version, "AspNetHello/AspNetHello.csproj");
+
+        return Dag.Dotnet().Build(source, configuration, version, "AspNetHello/AspNetHello.csproj");
     }
 
     /// <summary>
     /// Publish the ASP.NET Blazor application using the dotnet dependency module
     /// </summary>
     [Function]
-    public Container Publish(Directory? source = null, string version = "10.0", string configuration = "Release")
+    public Container Publish(
+        Directory? source = null,
+        string version = "10.0",
+        string configuration = "Release"
+    )
     {
         source ??= Dag.CurrentModule().Source().Directory_("..");
-        
+
         return Dag.Dotnet()
             .Publish(source, configuration, version, "AspNetHello/AspNetHello.csproj");
     }
@@ -34,10 +41,14 @@ public class AspnetHelloModule
     /// Create a production-ready ASP.NET container using the dotnet dependency module
     /// </summary>
     [Function]
-    public Container PublishContainer(Directory? source = null, int port = 5000, string version = "10.0")
+    public Container PublishContainer(
+        Directory? source = null,
+        int port = 5000,
+        string version = "10.0"
+    )
     {
         source ??= Dag.CurrentModule().Source().Directory_("..");
-        
+
         return Dag.Dotnet()
             .PublishAspNetContainer(
                 source,
@@ -46,7 +57,8 @@ public class AspnetHelloModule
                 "debian",
                 "Release",
                 "AspNetHello/AspNetHello.csproj",
-                port);
+                port
+            );
     }
 
     /// <summary>
@@ -57,7 +69,8 @@ public class AspnetHelloModule
         Directory? source = null,
         int httpPort = 5000,
         int httpsPort = 443,
-        string version = "10.0")
+        string version = "10.0"
+    )
     {
         source ??= Dag.CurrentModule().Source().Directory_("..");
 

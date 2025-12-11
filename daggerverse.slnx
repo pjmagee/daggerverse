@@ -1,0 +1,19 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/aspnet-blazor-template/">
+    <Project Path="aspnet-blazor-template/AspnetBlazorTemplateModule.csproj" />
+  </Folder>
+  <Folder Name="/aspnet-hello/">
+    <Project Path="aspnet-hello/AspNetHello/AspNetHello.csproj" />
+  </Folder>
+  <Folder Name="/aspnet-hello/.dagger/">
+    <Project Path="aspnet-hello/.dagger/AspnetHelloModule.csproj" />
+  </Folder>
+  <Folder Name="/dotnet/">
+    <Project Path="dotnet/Dotnet.csproj" />
+  </Folder>
+</Solution>

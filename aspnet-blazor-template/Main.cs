@@ -2,41 +2,60 @@ using Dagger;
 
 /// <summary>
 /// A Dagger module that dynamically generates and serves ASP.NET Blazor applications on-the-fly
-/// 
+///
 /// This module uses 'dotnet new blazor' to scaffold templates at runtime instead of storing source code.
 /// All application code is generated dynamically through Dagger functions, keeping the repository clean
 /// with only the Dagger module code.
 /// </summary>
 [Object]
 public class AspnetBlazorTemplateModule
-{    
+{
+    /// <summary>
+    /// ProjectName field
+    /// </summary>
     [Field(Description = "The name of the project to generate")]
     public string ProjectName { get; set; }
- 
+
+    /// <summary>
+    /// Version field
+    /// </summary>
     [Field(Description = "The .NET SDK version to use")]
     public string Version { get; set; }
 
+    /// <summary>
+    /// Port field
+    /// </summary>
     [Field(Description = "The HTTP port to expose")]
     public int Port { get; set; }
 
+    /// <summary>
+    /// BaseImage field
+    /// </summary>
     [Field(Description = "The base OS image variant")]
     public string BaseImage { get; set; }
 
+    /// <summary>
+    /// Configuration field
+    /// </summary>
     [Field(Description = "The build configuration (e.g., Debug or Release)")]
     public string Configuration { get; set; }
 
+    /// <summary>
+    /// Constructor for AspnetBlazorTemplateModule
+    /// </summary>
     public AspnetBlazorTemplateModule(
         string projectName = "AspNetBlazorTemplate",
         string version = "10.0",
         int port = 5000,
         string baseImage = "debian",
-        string configuration = "Release")
+        string configuration = "Release"
+    )
     {
-        this.ProjectName = projectName;
-        this.Version = version;
-        this.Port = port;
-        this.BaseImage = baseImage;
-        this.Configuration = configuration;
+        ProjectName = projectName;
+        Version = version;
+        Port = port;
+        BaseImage = baseImage;
+        Configuration = configuration;
     }
 
     /// <summary>
@@ -48,8 +67,8 @@ public class AspnetBlazorTemplateModule
     [Function]
     public Directory Scaffold(string? projectName = null, string? version = null)
     {
-        var name = projectName ?? this.ProjectName;
-        var ver = version ?? this.Version;
+        var name = projectName ?? ProjectName;
+        var ver = version ?? Version;
 
         return Dag.Dotnet()
             .Sdk(ver)
@@ -68,16 +87,16 @@ public class AspnetBlazorTemplateModule
     public Container Build(
         string? projectName = null,
         string? version = null,
-        string? configuration = null)
+        string? configuration = null
+    )
     {
-        var name = projectName ?? this.ProjectName;
-        var ver = version ?? this.Version;
-        var config = configuration ?? this.Configuration;
+        var name = projectName ?? ProjectName;
+        var ver = version ?? Version;
+        var config = configuration ?? Configuration;
         var source = Scaffold(name, ver);
         var projectPath = $"{name}/{name}.csproj";
 
-        return Dag.Dotnet()
-            .Build(source, config, ver, projectPath);
+        return Dag.Dotnet().Build(source, config, ver, projectPath);
     }
 
     /// <summary>
@@ -90,16 +109,16 @@ public class AspnetBlazorTemplateModule
     public Container Publish(
         string? projectName = null,
         string? version = null,
-        string? configuration = null)
+        string? configuration = null
+    )
     {
-        var name = projectName ?? this.ProjectName;
-        var ver = version ?? this.Version;
-        var config = configuration ?? this.Configuration;
+        var name = projectName ?? ProjectName;
+        var ver = version ?? Version;
+        var config = configuration ?? Configuration;
         var source = Scaffold(name, ver);
         var projectPath = $"{name}/{name}.csproj";
 
-        return Dag.Dotnet()
-            .Publish(source, config, ver, projectPath);
+        return Dag.Dotnet().Publish(source, config, ver, projectPath);
     }
 
     /// <summary>
@@ -114,12 +133,13 @@ public class AspnetBlazorTemplateModule
         string? projectName = null,
         int? port = null,
         string? version = null,
-        string? baseImage = null)
+        string? baseImage = null
+    )
     {
-        var name = projectName ?? this.ProjectName;
-        var ver = version ?? this.Version;
-        var portValue = port ?? this.Port;
-        var image = baseImage ?? this.BaseImage;
+        var name = projectName ?? ProjectName;
+        var ver = version ?? Version;
+        var portValue = port ?? Port;
+        var image = baseImage ?? BaseImage;
         var source = Scaffold(name, ver);
         var projectPath = $"{name}/{name}.csproj";
         var entrypoint = $"{name}.dll";
@@ -132,7 +152,8 @@ public class AspnetBlazorTemplateModule
                 image,
                 "Release",
                 projectPath,
-                portValue);
+                portValue
+            );
     }
 
     /// <summary>
@@ -147,10 +168,10 @@ public class AspnetBlazorTemplateModule
         string? projectName = null,
         int? port = null,
         string? version = null,
-        string? baseImage = null)
+        string? baseImage = null
+    )
     {
-        return PublishContainer(projectName, port, version, baseImage)
-            .AsService();
+        return PublishContainer(projectName, port, version, baseImage).AsService();
     }
 
     /// <summary>

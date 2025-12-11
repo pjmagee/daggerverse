@@ -1,0 +1,70 @@
+{
+    "folders": [
+        {
+            "path": "apache-avro-tools",
+            "name": "Apache Avro Tools"
+        },
+        {
+            "path": "aspnet-blazor-template",
+            "name": "AspNet Blazor Template"
+        },
+        {
+            "path": "aspnet-hello",
+            "name": "AspNet Hello"
+        },
+        {
+            "path": "d2",
+            "name": "D2"
+        },
+        {
+            "path": "dagger-readme-badge",
+            "name": "Dagger README Badge"
+        },
+        {
+            "path": "dotnet",
+            "name": "Dotnet"
+        },
+        {
+            "path": "git-filter-repo",
+            "name": "Git Filter Repo"
+        },
+        {
+            "path": "heroes-decode",
+            "name": "Heroes Decode"
+        },
+        {
+            "path": "kiota",
+            "name": "Kiota"
+        },
+        {
+            "path": "mothership",
+            "name": "Mothership"
+        },
+        {
+            "path": "open-weather-api",
+            "name": "Open Weather API"
+        },
+        {
+            "path": "paradox-clausewitz-save",
+            "name": "Paradox Clausewitz Save"
+        },
+        {
+            "path": "terminal-prompt",
+            "name": "Terminal Prompt"
+        },
+        {
+            "path": "winget-release",
+            "name": "Winget Release"
+        },
+        {
+            "path": "youtube-dl",
+            "name": "YouTube DL"
+        }
+    ],
+    "settings": {},
+    "extensions": {
+        "recommendations": [
+            "Dagger.dagger"
+        ]
+    }
+}
