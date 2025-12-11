@@ -235,4 +235,34 @@ public class TextHumanizer
         var input = text ?? Text;
         return input.Hyphenate();
     }
+
+    // ========== Localization Discovery ==========
+
+    /// <summary>
+    /// Search available cultures/localizations by name or code (e.g., "maltese", "french", "en").
+    /// Returns line-separated list of matching cultures with their codes and display names.
+    /// If no search term provided, returns all available cultures.
+    /// </summary>
+    [Function]
+    public string SearchCultures(string? search = null)
+    {
+        var cultures = CultureInfo
+            .GetCultures(CultureTypes.AllCultures)
+            .Where(c => !string.IsNullOrEmpty(c.Name));
+
+        if (!string.IsNullOrWhiteSpace(search))
+        {
+            var searchLower = search.ToLowerInvariant();
+            cultures = cultures.Where(c =>
+                c.Name.ToLowerInvariant().Contains(searchLower)
+                || c.EnglishName.ToLowerInvariant().Contains(searchLower)
+                || c.DisplayName.ToLowerInvariant().Contains(searchLower)
+                || c.NativeName.ToLowerInvariant().Contains(searchLower)
+            );
+        }
+
+        var results = cultures.OrderBy(c => c.Name).Select(c => $"{c.Name, -12} | {c.EnglishName}");
+
+        return string.Join(Environment.NewLine, results);
+    }
 }
