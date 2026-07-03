@@ -1,13 +1,14 @@
 {
   "name": "aspnet-blazor-template-module",
-  "engineVersion": "v0.19.7",
+  "engineVersion": "v0.21.7",
   "sdk": {
     "source": "github.com/pjmagee/dagger/sdk/csharp@csharp/experimental"
   },
   "dependencies": [
     {
       "name": "dotnet",
-      "source": "github.com/pjmagee/daggerverse/dotnet@main"
+      "source": "github.com/pjmagee/daggerverse/dotnet@main",
+      "pin": "3974560ef29c73a347db8c2fc032cc02966c7fd8"
     }
   ]
 }

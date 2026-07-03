@@ -11,33 +11,33 @@ using Dagger;
 public class AspnetBlazorTemplateModule
 {
     /// <summary>
-    /// ProjectName field
+    /// The name of the project to generate
     /// </summary>
-    [Field(Description = "The name of the project to generate")]
+    [Function]
     public string ProjectName { get; set; }
 
     /// <summary>
-    /// Version field
+    /// The .NET SDK version to use
     /// </summary>
-    [Field(Description = "The .NET SDK version to use")]
+    [Function]
     public string Version { get; set; }
 
     /// <summary>
-    /// Port field
+    /// The HTTP port to expose
     /// </summary>
-    [Field(Description = "The HTTP port to expose")]
+    [Function]
     public int Port { get; set; }
 
     /// <summary>
-    /// BaseImage field
+    /// The base OS image variant
     /// </summary>
-    [Field(Description = "The base OS image variant")]
+    [Function]
     public string BaseImage { get; set; }
 
     /// <summary>
-    /// Configuration field
+    /// The build configuration (e.g., Debug or Release)
     /// </summary>
-    [Field(Description = "The build configuration (e.g., Debug or Release)")]
+    [Function]
     public string Configuration { get; set; }
 
     /// <summary>
