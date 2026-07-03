@@ -14,13 +14,13 @@ public class TextHumanizer
     /// <summary>
     /// The input text to transform
     /// </summary>
-    [Field(Description = "The input text to transform")]
+    [Function]
     public string Text { get; set; }
 
     /// <summary>
     /// Culture for localization (e.g., 'en-US', 'fr-FR', 'de-DE')
     /// </summary>
-    [Field(Description = "Culture code for localization (e.g., 'en-US', 'fr-FR')")]
+    [Function]
     public string Culture { get; set; }
 
     /// <summary>
@@ -34,8 +34,7 @@ public class TextHumanizer
 
     private CultureInfo GetCulture() => new CultureInfo(Culture);
 
-    // ========== Builder Methods (Chainable) ==========
-
+    // ========== Builder Methods (Chainable) =
     /// <summary>
     /// Set the text to transform
     /// </summary>

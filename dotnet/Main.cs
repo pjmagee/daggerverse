@@ -364,7 +364,7 @@ public class Dotnet
             testArgs.Add(project);
         }
 
-        return await container.WithExec(testArgs.ToArray()).StdoutAsync();
+        return await container.WithExec(testArgs.ToArray()).Stdout();
     }
 
     /// <summary>
