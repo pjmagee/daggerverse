@@ -118,11 +118,12 @@ public class Dotnet
     /// These images are larger (typically 2x SDK size) but include required AOT compilation tools
     /// </summary>
     /// <param name="version">The .NET version (e.g., "8.0", "9.0", "10.0"). Default: "10.0"</param>
-    /// <param name="baseImage">The base OS image variant (alpine, mariner, ubuntu). Default: "ubuntu"</param>
+    /// <param name="baseImage">The base OS image variant (alpine, mariner, ubuntu). Default: "alpine"</param>
     [Function]
-    public Container AotSdk(string version = "10.0", string baseImage = "ubuntu")
+    public Container AotSdk(string version = "10.0", string baseImage = "alpine")
     {
-        var tag = $"{version}-{baseImage}-aot";
+        // Note: AOT-specific SDK images may use tags like 8.0-alpine-aot; fall back to standard SDK + PublishAot property for broad compatibility
+        var tag = $"{version}-{baseImage}";
         return Dag.Container().From($"mcr.microsoft.com/dotnet/sdk:{tag}");
     }
 
@@ -193,7 +194,7 @@ public class Dotnet
     /// <param name="rid">Runtime identifier (e.g., linux-x64, linux-arm64, win-x64). Required.</param>
     /// <param name="configuration">Build configuration. Default: "Release"</param>
     /// <param name="version">The .NET SDK version to use. Default: "10.0"</param>
-    /// <param name="baseImage">The AOT SDK base image variant (alpine, mariner, ubuntu). Default: "ubuntu"</param>
+    /// <param name="baseImage">The AOT SDK base image variant (alpine, mariner, ubuntu). Default: "alpine"</param>
     /// <param name="project">Optional path to specific project file (relative to source)</param>
     /// <param name="outputDir">Output directory for published artifacts. Default: "/publish"</param>
     [Function]
@@ -202,7 +203,7 @@ public class Dotnet
         string rid,
         string configuration = "Release",
         string version = "10.0",
-        string baseImage = "ubuntu",
+        string baseImage = "alpine",
         string? project = null,
         string outputDir = "/publish"
     )
@@ -218,7 +219,7 @@ public class Dotnet
             publishArgs.Add(project);
         }
 
-        publishArgs.AddRange(["-c", configuration, "-r", rid, "-o", outputDir]);
+        publishArgs.AddRange(["-c", configuration, "-r", rid, "-o", outputDir, "-p:PublishAot=true", "-p:PublishTrimmed=true", "-p:InvariantGlobalization=true"]);
 
         return container.WithExec([.. publishArgs]);
     }
@@ -246,8 +247,8 @@ public class Dotnet
         string? project = null
     )
     {
-        // Determine the SDK base image from RID
-        var sdkBaseImage = rid.StartsWith("linux") ? "ubuntu" : "ubuntu";
+        // Determine the SDK base image from RID; use alpine for AOT compatibility
+        var sdkBaseImage = rid.StartsWith("linux") ? "alpine" : "alpine";
 
         // Build stage
         var buildContainer = PublishNativeAot(

@@ -87,7 +87,7 @@ public class AspnetHelloModule
             .WithEnvVariable("ASPNETCORE_URLS", $"http://+:{httpPort};https://+:{httpsPort}")
             .WithEnvVariable("ASPNETCORE_HTTPS_PORT", httpsPort.ToString())
             .WithEnvVariable("ASPNETCORE_ENVIRONMENT", "Development")
-            .WithExec(["dotnet", "dev-certs", "https", "--trust"])
+            .WithExec(["dotnet", "dev-certs", "https"])
             .WithExposedPort(httpPort)
             .WithExposedPort(httpsPort)
             .WithEntrypoint(["dotnet", "AspNetHello.dll"]);
