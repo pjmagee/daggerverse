@@ -13,10 +13,16 @@ public class AspnetHelloModule
     public Container Build(
         Directory? source = null,
         string version = "10.0",
-        string configuration = "Release"
+        string configuration = "Release",
+        string? cacheBust = null
     )
     {
         source ??= Dag.CurrentModule().Source().Directory_("..");
+
+        if (!string.IsNullOrEmpty(cacheBust))
+        {
+            source = source.WithNewFile("VERIFY_BUST.txt", cacheBust);
+        }
 
         return Dag.Dotnet().Build(source, configuration, version, "AspNetHello/AspNetHello.csproj");
     }
@@ -28,10 +34,16 @@ public class AspnetHelloModule
     public Container Publish(
         Directory? source = null,
         string version = "10.0",
-        string configuration = "Release"
+        string configuration = "Release",
+        string? cacheBust = null
     )
     {
         source ??= Dag.CurrentModule().Source().Directory_("..");
+
+        if (!string.IsNullOrEmpty(cacheBust))
+        {
+            source = source.WithNewFile("VERIFY_BUST.txt", cacheBust);
+        }
 
         return Dag.Dotnet()
             .Publish(source, configuration, version, "AspNetHello/AspNetHello.csproj");
@@ -44,10 +56,16 @@ public class AspnetHelloModule
     public Container PublishContainer(
         Directory? source = null,
         int port = 5000,
-        string version = "10.0"
+        string version = "10.0",
+        string? cacheBust = null
     )
     {
         source ??= Dag.CurrentModule().Source().Directory_("..");
+
+        if (!string.IsNullOrEmpty(cacheBust))
+        {
+            source = source.WithNewFile("VERIFY_BUST.txt", cacheBust);
+        }
 
         return Dag.Dotnet()
             .PublishAspNetContainer(
@@ -69,10 +87,16 @@ public class AspnetHelloModule
         Directory? source = null,
         int httpPort = 5000,
         int httpsPort = 443,
-        string version = "10.0"
+        string version = "10.0",
+        string? cacheBust = null
     )
     {
         source ??= Dag.CurrentModule().Source().Directory_("..");
+
+        if (!string.IsNullOrEmpty(cacheBust))
+        {
+            source = source.WithNewFile("VERIFY_BUST.txt", cacheBust);
+        }
 
         // Get published artifacts from dotnet module
         var published = Dag.Dotnet()

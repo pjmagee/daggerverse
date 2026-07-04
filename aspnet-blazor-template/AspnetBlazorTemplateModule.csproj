@@ -4,6 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>AspnetBlazorTemplateModule</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <Import Project="sdk/Dagger.SDK.targets" Condition="Exists('sdk/Dagger.SDK.targets')" />
 </Project>

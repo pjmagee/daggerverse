@@ -118,7 +118,7 @@ public class Dotnet
     /// These images are larger (typically 2x SDK size) but include required AOT compilation tools
     /// </summary>
     /// <param name="version">The .NET version (e.g., "8.0", "9.0", "10.0"). Default: "10.0"</param>
-    /// <param name="baseImage">The base OS image variant (alpine, mariner, ubuntu). Default: "alpine"</param>
+    /// <param name="baseImage">The base OS image variant (alpine, mariner, ubuntu, debian). Default: "alpine"</param>
     [Function]
     public Container AotSdk(string version = "10.0", string baseImage = "alpine")
     {
@@ -127,23 +127,33 @@ public class Dotnet
         var tag = $"{version}-{baseImage}";
         var c = Dag.Container().From($"mcr.microsoft.com/dotnet/sdk:{tag}");
 
-        // Install native AOT prerequisites (linker/compiler) so `dotnet publish -p:PublishAot=true` can succeed.
-        if (baseImage.Contains("alpine"))
+        foreach (var cmd in GetAotToolchainInstall(baseImage))
         {
-            c = c.WithExec(new[] { "apk", "add", "--no-cache", "clang", "gcc", "musl-dev", "binutils" });
-        }
-        else if (baseImage.Contains("ubuntu") || baseImage.Contains("jammy") || baseImage.Contains("noble") || baseImage.Contains("bookworm"))
-        {
-            c = c
-                .WithExec(new[] { "apt-get", "update" })
-                .WithExec(new[] { "apt-get", "install", "-y", "clang", "gcc", "build-essential" });
-        }
-        else
-        {
-            // Mariner / others - best effort
-            c = c.WithExec(new[] { "tdnf", "install", "-y", "clang", "gcc" });
+            c = c.WithExec(cmd);
         }
         return c;
+    }
+
+    private static IEnumerable<string[]> GetAotToolchainInstall(string baseImage)
+    {
+        // Explicit mapping: no blind fallthrough that would run tdnf on non-mariner images.
+        if (baseImage.Contains("alpine"))
+        {
+            yield return new[] { "apk", "add", "--no-cache", "clang", "gcc", "musl-dev", "binutils" };
+            yield break;
+        }
+        if (baseImage.Contains("ubuntu") || baseImage.Contains("jammy") || baseImage.Contains("noble") || baseImage.Contains("bookworm") || baseImage.Contains("debian"))
+        {
+            yield return new[] { "apt-get", "update" };
+            yield return new[] { "apt-get", "install", "-y", "clang", "gcc", "build-essential" };
+            yield break;
+        }
+        if (baseImage.Contains("mariner"))
+        {
+            yield return new[] { "tdnf", "install", "-y", "clang", "gcc" };
+            yield break;
+        }
+        // Unknown base: do nothing (or could default to alpine, but explicit is safer for now).
     }
 
     /// <summary>

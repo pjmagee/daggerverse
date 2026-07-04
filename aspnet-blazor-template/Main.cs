@@ -43,6 +43,8 @@ public class AspnetBlazorTemplateModule
     /// <summary>
     /// Constructor for AspnetBlazorTemplateModule
     /// </summary>
+    public AspnetBlazorTemplateModule() : this("AspNetBlazorTemplate", "10.0", 5000, "debian", "Release") { }
+
     public AspnetBlazorTemplateModule(
         string projectName = "AspNetBlazorTemplate",
         string version = "10.0",
@@ -128,7 +130,7 @@ public class AspnetBlazorTemplateModule
     /// <param name="port">The HTTP port to expose. Uses constructor default if not specified.</param>
     /// <param name="version">The .NET version. Uses constructor default if not specified.</param>
     /// <param name="baseImage">The base OS image variant. Uses constructor default if not specified.</param>
-    [Function]
+    [Function(Description = "Create a production-ready ASP.NET container")]
     public Container PublishContainer(
         string? projectName = null,
         int? port = null,
@@ -163,7 +165,7 @@ public class AspnetBlazorTemplateModule
     /// <param name="port">The HTTP port to expose. Uses constructor default if not specified.</param>
     /// <param name="version">The .NET version. Uses constructor default if not specified.</param>
     /// <param name="baseImage">The base OS image variant. Uses constructor default if not specified.</param>
-    [Function]
+    [Function(Description = "Serve the ASP.NET Blazor application as a Dagger service")]
     public Service Serve(
         string? projectName = null,
         int? port = null,
