@@ -7,7 +7,7 @@
   "dependencies": [
     {
       "name": "dotnet",
-      "source": "../dotnet"
+      "source": "github.com/pjmagee/daggerverse/dotnet@main"
     }
   ]
 }
