@@ -122,9 +122,28 @@ public class Dotnet
     [Function]
     public Container AotSdk(string version = "10.0", string baseImage = "alpine")
     {
-        // Note: AOT-specific SDK images may use tags like 8.0-alpine-aot; fall back to standard SDK + PublishAot property for broad compatibility
+        // Note: AOT-specific SDK images may use tags like 8.0-alpine-aot; fall back to standard SDK + PublishAot property for broad compatibility.
+        // We install the native toolchain below so PublishAot succeeds on regular SDK images.
         var tag = $"{version}-{baseImage}";
-        return Dag.Container().From($"mcr.microsoft.com/dotnet/sdk:{tag}");
+        var c = Dag.Container().From($"mcr.microsoft.com/dotnet/sdk:{tag}");
+
+        // Install native AOT prerequisites (linker/compiler) so `dotnet publish -p:PublishAot=true` can succeed.
+        if (baseImage.Contains("alpine"))
+        {
+            c = c.WithExec(new[] { "apk", "add", "--no-cache", "clang", "gcc", "musl-dev", "binutils" });
+        }
+        else if (baseImage.Contains("ubuntu") || baseImage.Contains("jammy") || baseImage.Contains("noble") || baseImage.Contains("bookworm"))
+        {
+            c = c
+                .WithExec(new[] { "apt-get", "update" })
+                .WithExec(new[] { "apt-get", "install", "-y", "clang", "gcc", "build-essential" });
+        }
+        else
+        {
+            // Mariner / others - best effort
+            c = c.WithExec(new[] { "tdnf", "install", "-y", "clang", "gcc" });
+        }
+        return c;
     }
 
     /// <summary>
@@ -247,8 +266,9 @@ public class Dotnet
         string? project = null
     )
     {
-        // Determine the SDK base image from RID; use alpine for AOT compatibility
-        var sdkBaseImage = rid.StartsWith("linux") ? "alpine" : "alpine";
+        // AOT builds use alpine SDK (small + good compatibility) + toolchain installed in AotSdk.
+        // Runtime image chosen by the caller via baseImage.
+        var sdkBaseImage = "alpine";
 
         // Build stage
         var buildContainer = PublishNativeAot(
