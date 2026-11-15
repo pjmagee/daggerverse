@@ -6,6 +6,7 @@
     <RootNamespace>AspnetBlazorTemplateModule</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableDaggerAnalyzers>true</EnableDaggerAnalyzers>
   </PropertyGroup>
   <Import Project="sdk/Dagger.SDK.targets" Condition="Exists('sdk/Dagger.SDK.targets')" />
 </Project>

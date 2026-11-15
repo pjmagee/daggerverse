@@ -13,6 +13,9 @@
   <Folder Name="/aspnet-hello/.dagger/">
     <Project Path="aspnet-hello/.dagger/AspnetHelloModule.csproj" />
   </Folder>
+  <Folder Name="/csharp-features/">
+    <Project Path="csharp-features/CsharpFeatures.csproj" />
+  </Folder>
   <Folder Name="/dotnet/">
     <Project Path="dotnet/Dotnet.csproj" />
   </Folder>

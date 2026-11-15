@@ -1,37 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <!-- SDK defaults (implicit usings, nullable, vendored SDK packages) -->
+  <Import Project="sdk/Dagger.SDK.props" Condition="Exists('sdk/Dagger.SDK.props')" />
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <RootNamespace>Dotnet</RootNamespace>
-    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableDaggerAnalyzers>true</EnableDaggerAnalyzers>
   </PropertyGroup>
 
-  <ItemGroup>
-    <!-- Explicitly include all .cs files (SDK automatic inclusion disabled) -->
-    <!-- Exclude obj/bin to avoid duplicate auto-generated assembly attributes -->
-    <Compile Include="**/*.cs" Exclude="**/obj/**;**/bin/**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <!-- Disable System.IO implicit using to avoid conflict with Dagger.Directory -->
-    <Using Remove="System.IO" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <!-- Required by vendored SDK source code (sdk/**/*.cs) -->
-    <PackageReference Include="OpenTelemetry" Version="1.14.0" />
-    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.14.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AdditionalFiles Include="dagger.json" />
-    <!-- Include Dagger SDK Analyzers for IDE support -->
-    <Analyzer Include="sdk/analyzers/dotnet/cs/Dagger.SDK.Analyzers.dll" />
-    <Analyzer Include="sdk/analyzers/dotnet/cs/Dagger.SDK.CodeFixes.dll" />
-  </ItemGroup>
+  <!-- SDK build logic (source inclusion, dagger.json, analyzers) -->
+  <Import Project="sdk/Dagger.SDK.targets" Condition="Exists('sdk/Dagger.SDK.targets')" />
 </Project>

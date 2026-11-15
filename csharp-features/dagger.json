@@ -1,0 +1,7 @@
+{
+  "name": "csharp-features",
+  "engineVersion": "v1.0.0-beta.10",
+  "sdk": {
+    "source": "github.com/pjmagee/dagger/sdk/csharp@csharp/experimental"
+  }
+}

@@ -26,8 +26,6 @@ public class TextHumanizer
     /// <summary>
     /// Creates a new Humanizer module instance
     /// </summary>
-    public TextHumanizer() : this("", "en-US") { }
-
     public TextHumanizer(string text = "", string culture = "en-US")
     {
         Text = text;
