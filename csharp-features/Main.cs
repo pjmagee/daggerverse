@@ -227,18 +227,19 @@ public class CsharpFeatures
     }
 
     /// <summary>
-    /// A check can also return a Container: it passes when the last command
-    /// exits with 0. Here the source must contain a README.
+    /// A check can run a container: awaiting Sync() throws when a command
+    /// exits non-zero, which fails the check. Here the source must contain a README.
     /// </summary>
     /// <param name="source">The module's source</param>
     [Function]
     [Check]
-    public Container HasReadme([DefaultPath(".")] Directory source)
+    public async Task HasReadme([DefaultPath(".")] Directory source)
     {
-        return Dag.Container()
+        await Dag.Container()
             .From("alpine:3.20")
             .WithDirectory("/src", source)
-            .WithExec(["test", "-f", "/src/README.md"]);
+            .WithExec(["test", "-f", "/src/README.md"])
+            .Sync();
     }
 
     /// <summary>

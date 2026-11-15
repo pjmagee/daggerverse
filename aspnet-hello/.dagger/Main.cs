@@ -108,13 +108,13 @@ public class AspnetHelloModule
 
     /// <summary>
     /// Check that the app compiles. Run it with `dagger check`.
-    /// A check passes when the returned container's last command exits with 0.
+    /// A check fails by throwing: awaiting Sync() throws if the build fails.
     /// </summary>
     [Function]
     [Check]
-    public Container BuildCheck()
+    public async Task BuildCheck()
     {
-        return Build();
+        await Build().Sync();
     }
 
     /// <summary>
@@ -122,9 +122,9 @@ public class AspnetHelloModule
     /// </summary>
     [Function]
     [Check]
-    public Container FormatCheck()
+    public async Task FormatCheck()
     {
-        return DotnetFormat(verifyOnly: true);
+        await DotnetFormat(verifyOnly: true).Sync();
     }
 
     /// <summary>
@@ -139,7 +139,8 @@ public class AspnetHelloModule
     public async Task SmokeTest([DefaultAddress("alpine/curl")] Container curl)
     {
         var body = await curl.WithServiceBinding("app", Serve())
-            .WithExec(["curl", "--fail", "--silent", "--retry", "10", "--retry-connrefused", "http://app:5000/"])
+            // The app redirects HTTP to HTTPS, served with a self-signed dev certificate.
+            .WithExec(["curl", "--fail", "--silent", "--location", "--insecure", "--retry", "10", "--retry-connrefused", "http://app:5000/"])
             .Stdout();
 
         if (!body.Contains("Hello, world!"))
@@ -158,7 +159,14 @@ public class AspnetHelloModule
     [Generate]
     public Changeset Format()
     {
-        var formatted = DotnetFormat(verifyOnly: false).Directory("/src");
+        // dotnet format restores the project, so drop the build output it
+        // leaves behind: only source changes belong in the changeset.
+        var formatted = Dag.Directory()
+            .WithDirectory(
+                ".",
+                DotnetFormat(verifyOnly: false).Directory("/src"),
+                exclude: ["**/bin", "**/obj"]
+            );
         return formatted.Changes(Source);
     }
 
