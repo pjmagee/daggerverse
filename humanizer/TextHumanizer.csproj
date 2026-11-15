@@ -6,6 +6,7 @@
     <RootNamespace>TextHumanizer</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableDaggerAnalyzers>true</EnableDaggerAnalyzers>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Humanizer" Version="2.14.1" />

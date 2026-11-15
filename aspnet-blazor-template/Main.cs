@@ -43,8 +43,6 @@ public class AspnetBlazorTemplateModule
     /// <summary>
     /// Constructor for AspnetBlazorTemplateModule
     /// </summary>
-    public AspnetBlazorTemplateModule() : this("AspNetBlazorTemplate", "10.0", 5000, "debian", "Release") { }
-
     public AspnetBlazorTemplateModule(
         string projectName = "AspNetBlazorTemplate",
         string version = "10.0",
